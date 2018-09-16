@@ -19,6 +19,11 @@ pipeline {
       steps {
         build job: 'deploy-to-staging'
       }
+      post {
+        success {
+          echo 'Code deployed to Staging.'
+        }
+      }
     }
     stage ('Deploy to Production'){
       steps {
