@@ -23,6 +23,9 @@ pipeline {
         success {
           echo 'Code deployed to Staging.'
         }
+        failure {
+          echo 'Staging deployment failed.'
+        }
       }
     }
     stage ('Deploy to Production'){
@@ -38,7 +41,7 @@ pipeline {
           echo 'Code deployed to Production.'
         }
         failure {
-          echo 'Deployment failed.'
+          echo 'Production deployment failed.'
         }
       }
     }
